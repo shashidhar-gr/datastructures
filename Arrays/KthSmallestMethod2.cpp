@@ -32,7 +32,7 @@ void insertElement(int num) {
     int comp = 0, temp = 0;
     cout<<"last: "<<last<<", pos: "<<pos<<"\n";
     while(pos > first && pos != 0) {
-        //cout<<"In loop.....";
+        cout<<"In loop.....";
         comp = pos/2;
         //cout<<"comp: "<<comp<<"\n";
         //cout<<"comparing "<<heap[comp]<<" and "<<heap[pos]<<"\n";
@@ -49,7 +49,9 @@ void insertElement(int num) {
             cout<<"new pos is "<<pos<<"\n";
             
         }
-        //pos = last;
+        else {
+        	break;
+		}
     }
     //cout<<"Last before printing array: "<<last<<"\n";
     for(int i = 0; i < last; i++) {
