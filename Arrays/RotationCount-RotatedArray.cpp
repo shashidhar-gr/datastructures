@@ -17,3 +17,10 @@ Output: 4
 Input: arr[] = {7, 9, 11, 12, 15};
 Output: 0
 */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	return 0;
+}
