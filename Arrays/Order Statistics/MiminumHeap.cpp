@@ -8,8 +8,8 @@
 using namespace std;
 void printArray(int[], int);
 void insertElement(int, int);
-int a[9] = {3, 1, 0, 5, 6, 4, 6, 4, 2};
-int b[9] = {};
+int a[12] = {3, 1, 0, 5, 6, 4, 6, 4, 2, -2, -1, -1};
+int b[12] = {};
 
 int main() {
 	int pos = 0;
@@ -41,12 +41,14 @@ void printArray( int a[], int n ) {
 void insertElement(int pos, int element) {
 
 	b[pos] = element;
-	int temp = 0;
+	int temp = 0, parent = (pos-1)/2;
 	
-	while(b[pos] < b[(pos-1)/2] && pos != 0) {
+	while(b[pos] < b[parent] && pos >= 0) {
 		temp = b[pos];
-		b[pos] = b[pos-1/2];
-		b[pos-1/2] = temp;
+		b[pos] = b[parent];
+		b[parent] = temp;
+		parent = (parent-1)/2;
+		pos = (pos-1)/2;
 	}
 	
 	return;
