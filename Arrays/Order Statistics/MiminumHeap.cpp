@@ -8,7 +8,7 @@
 using namespace std;
 void printArray(int[], int);
 void insertElement(int, int);
-int a[12] = {3, 1, 0, 5, 6, 4, 6, 4, 2, -2, -1, -1};
+int a[12] = {3, 1, 0, 5, 6, 4, 7, 8, 2, -2, -1, -3};
 int b[12] = {};
 
 int main() {
