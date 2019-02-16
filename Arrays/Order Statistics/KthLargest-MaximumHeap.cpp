@@ -1,9 +1,10 @@
 /*
 K’th Smallest/Largest Element in Unsorted Array.
 
-Given an array and a number k where k is smaller than size of array, 
-we need to find the k’th smallest element in the given array. It is given that ll array elements are distinct.
+Given an array and a number k where k is smaller than size of array, we need to find the k’th largest element in the given array. It is given that ll array elements are distinct.
+
 Examples:
+
 Input: arr[] = {7, 10, 4, 3, 20, 15}
        k = 3
 Output: 7
@@ -13,6 +14,7 @@ Input: arr[] = {7, 10, 4, 3, 20, 15}
 Output: 10
 
 */
+
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -31,15 +33,14 @@ int main() {
 		insertElement(i, a[i]);
 	}
 	
-	int k = 3;
-	
+	int k = 2;
+
 	for(int i = 0; i < k -1; i++) {
 		removeElement();
 	}
-	cout<<"\n"<<k<<"th smallest element is "<<b[0]<<"\n";
+	cout<<"\n"<<k<<"th largest element is "<<b[0]<<"\n"; 
 	return 0;
 }
-
 
 /*
 Function to insert new element to heap and also heapify.
@@ -49,7 +50,7 @@ void insertElement(int pos, int element) {
 	b[pos] = element;
 	int temp = 0, parent = (pos-1)/2;
 	
-	while(b[pos] < b[parent] && pos >= 0) {
+	while(b[pos] > b[parent] && pos >= 0) {
 		temp = b[pos];
 		b[pos] = b[parent];
 		b[parent] = temp;
@@ -81,7 +82,7 @@ void removeElement() {
 	while( (k*2)+1 < heapSize && (k*2)+2 < heapSize ) {
 		leftNode = (k*2)+1;
 		rightNode = (k*2)+2;
-		if( b[k] > b[leftNode] && b[leftNode] < b[rightNode] )  {
+		if( b[k] < b[leftNode] && b[leftNode] > b[rightNode] )  {
 			temp = b[k];
 			b[k] = b[leftNode];
 			b[leftNode] = temp;
@@ -96,7 +97,7 @@ void removeElement() {
 	}
 	
 	leftNode = (k*2)+1;
-	if(leftNode < heapSize && b[k] > b[leftNode] ) {
+	if(leftNode < heapSize && b[k] < b[leftNode] ) {
 		temp = b[k];
 		b[k] = b[leftNode];
 		b[leftNode] = temp;
