@@ -1,0 +1,18 @@
+1. Given a set of integers S, find any subset which adds to given target T.
+
+    Example: 
+
+    S = {1, -10, 9, 4, 3, 2, 50, 12, 13, -5}
+
+    T = 20
+
+
+
+2. Given a set of integers, find if it is possible to divide it into two groups such that sum of one group is a multiple of 5 and sum of the other is odd.
+
+
+
+3. Implement power(x, y), x raised to the power y, using Top-Down recursion.
+
+https://algorithms.tutorialhorizon.com/stock-single-sell-problem-on-solution/
+https://algorithms.tutorialhorizon.com/dynamic-programming-maximum-subarray-problem/
