@@ -18,3 +18,9 @@ describe('findPairSorting', function() {
         assert.equal(findPair.findPairSorting([], 0), false)
     })
 })
+
+describe('bubbleSort', function() {
+    it('should return empty array, since input array is empty', function() {
+        assert.deepEqual(findPair.bubbleSort([]), [])
+    })
+})

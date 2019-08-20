@@ -43,3 +43,12 @@
             return false;
         }
     }
+
+/** 
+ * Bubble sort
+*/
+    exports.bubbleSort = function(A = []) {
+        if(A.length === 0) {
+            return A;
+        }
+    }
