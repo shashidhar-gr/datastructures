@@ -60,6 +60,31 @@
 
         return false;
     }
+/*
+    Hashing method.
+        -> Iterate through each array.
+        -> For each element calulate  
+        -> Check sum of elements at two ends.
+    Time complexity: O(N)
+    Space complexity: O(N)    
+*/
+    exports.findPairHashing = function(A = [], k = 0) {
+        if(A.length === 0 || A.length === 1) {
+            return false;
+        }
+
+        let hashSet = {}
+        let temp = 0;
+        for(let i = 0; i < A.length; i++) {
+            temp = k - A[i];
+                if(hashSet[temp])
+                    return true;
+                else    
+                    hashSet[A[i]] = true;
+        }
+
+        return false;
+    }
 
 /** 
     * Bubble sort
