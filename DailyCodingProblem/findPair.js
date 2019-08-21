@@ -1,5 +1,5 @@
 /*
-    Daily Coding Problem
+    Daily Coding Problem: Problem #1 [Easy]
 
     This problem was recently asked by Google.
 
