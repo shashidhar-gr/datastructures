@@ -17,7 +17,7 @@
     Space complexity: O(1)
 */
     exports.findPairBruteForce = function(A = [], k = 0) {
-        if(A.length === 0) {
+        if(A.length === 0 || A.length === 1) {
             return false;
         }
 
@@ -39,9 +39,24 @@
         -> Check sum of elements at two ends.
 */
     exports.findPairSorting = function(A = [], k = 0) {
-        if(A.length === 0) {
+        if(A.length === 0 || A.length === 1) {
             return false;
         }
+
+        A = module.exports.bubbleSort(A);
+        let j = A.length;
+        let i = 0;
+
+        while(i < j) {
+            if(A[i] + A[j] === k)
+                return true;
+            if((A[i] + A[j]) < k)
+                i++;
+            else    
+                j--; 
+        }
+
+        return false;
     }
 
 /** 
@@ -51,4 +66,16 @@
         if(A.length === 0) {
             return A;
         }
+        let temp;
+        for(let i = 0; i < A.length; i++) {
+            for(let j = 0; j < A.length; j++) {
+                if(A[j] > A[j+1]) {
+                    temp = A[j];
+                    A[j] = A[j+1];
+                    A[j+1] = temp;
+                }
+            }
+        }
+
+        return A;
     }
