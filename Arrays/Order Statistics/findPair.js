@@ -37,6 +37,8 @@
     Sorting method.
         -> Sort the elements in array.
         -> Check sum of elements at two ends.
+    Time complexity: O(N^2)
+    Space complexity: O(1)    
 */
     exports.findPairSorting = function(A = [], k = 0) {
         if(A.length === 0 || A.length === 1) {
@@ -60,7 +62,7 @@
     }
 
 /** 
- * Bubble sort
+    * Bubble sort
 */
     exports.bubbleSort = function(A = []) {
         if(A.length === 0) {
