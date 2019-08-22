@@ -13,13 +13,13 @@ exports.findProduct = function(A = []) {
         return A;
     }
 
-    let sum = 0;
+    let sum = 1;
     for(let i = 0; i < A.length; i++) {
-        sum+= A[i];
+        sum*= A[i];
     }
 
-    for(let i = 0; i < A.length; i++)
+    for(let i = 0; i < A.length; i++){
         A[i] = sum/A[i];    
-    
+    }
     return A;
 }
