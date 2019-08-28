@@ -50,14 +50,18 @@ class BinaryTree {
 
         if(this.root === null)
             this.root = newNode;
-        //else 
-            //this.inserNode(this.root, newNode)
+        else 
+            this.insertNode(this.root, newNode)
     }
 
-    inserNode(root, node) {
-        if(node.data < root.data) {
+    insertNode(root, node) {
 
-        }
+        if(root.)    
+
+        if(node.data < root.data) 
+            insertNode(root.data.lNode, node)
+        else   
+            insertNode(root.data.rNode, node)
     }
 
     serialize(root) {
