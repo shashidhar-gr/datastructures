@@ -17,6 +17,10 @@
     The following test should pass:
     node = Node('root', Node('left', Node('left.left')), Node('right'))
     assert deserialize(serialize(node)).left.left.val == 'left.left'
+
+    LeetCode: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+    GeekForGeeks: https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
+    Youtube: https://www.youtube.com/watch?v=suj1ro8TIVY
 */
 
 class Node {
