@@ -68,6 +68,8 @@ class BinaryTree {
             return null;
 
         let node = new Node(queue.remove())
+        node.lNode = this.deserializeHelper(queue)
+        node.rNode = this.deserializeHelper(queue)
         return node;
     }
 

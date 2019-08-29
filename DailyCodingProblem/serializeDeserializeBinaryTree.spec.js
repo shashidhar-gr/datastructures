@@ -28,5 +28,20 @@ describe('BinaryTree', function() {
         queue.add(10);
         let node = binaryTree.deserializeHelper(queue);
         assert.equal(node.data, 10)
+        assert.equal(node.lNode, null)
+        assert.equal(node.rNode, null)
+    })
+    it('should return Node object with data value 10 and lNode with data value 5, rNode with data value 15, since input queue has three elements [10, 5, 15].', function() {
+        let binaryTree = new BinaryTree();
+        let queue = new Queue();
+        queue.add(10);
+        queue.add(5);
+        queue.add(15);
+        let node = binaryTree.deserializeHelper(queue);
+        assert.equal(node.data, 10)
+        assert.equal(node.lNode instanceof Node, true)
+        assert.equal(node.lNode.data, 5)
+        assert.equal(node.lNode.data, 5)
+        //assert.equal(node.rNode instanceof Node, true)
     })
 })
