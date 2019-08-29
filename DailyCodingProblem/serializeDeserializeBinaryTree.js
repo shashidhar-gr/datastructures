@@ -23,6 +23,8 @@
     Youtube: https://www.youtube.com/watch?v=suj1ro8TIVY
 */
 
+var Queue = require('./queue').Queue;
+
 class Node {
     constructor(data) {
         this.data = data;
@@ -36,16 +38,37 @@ class BinaryTree {
         this.root = null;
     }
 
+    /** 
+     * Function that will be call by external source to deserialize the binary tree.
+     * Input: String containing binary tree elements to deserialize.
+     * Output: Returns Binary tree, that is constructed using elements in given input.
+    */
     deserialize(s = '') {
         s = s.toString();
+
         if(s === '')
             return null;
         
-        let list = s.split(); 
+        let list = s.split();
+        let queue = new Queue(); 
         for(let i = 0; i < list.length; i++) {
-            this.insert(list[i])
+            queue.add(list[i])
         }
-        return this.root;
+
+        return deserializeHelper(queue);
+    }
+
+    /**
+     * Function that will helps to deserialize the elements given in queue to binary tree. 
+     * Input: Queue Object.
+     * Ouput: Binary Tree Object.
+    */
+    deserializeHelper(queue = null) {
+        if(queue === null || queue.elements().length === 0)
+            return null;
+
+        let node = new Node(queue.remove())
+        return node;
     }
 
     insert(element) {
@@ -60,7 +83,7 @@ class BinaryTree {
 
     insertNode(root, node) {
 
-        if(root.)    
+        if(root)    
 
         if(node.data < root.data) 
             insertNode(root.data.lNode, node)

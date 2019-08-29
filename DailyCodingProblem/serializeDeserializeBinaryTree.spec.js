@@ -1,27 +1,32 @@
-var serializeDeserializeBinaryTree = require('./serializeDeserializeBinaryTree');
+var BinaryTree = require('./serializeDeserializeBinaryTree').BinaryTree;
+var Node = require('./serializeDeserializeBinaryTree').Node;
+var Queue = require('./queue').Queue;
 var assert = require('assert');
 
-describe('serializeDeserializeBinaryTree', function() {
+describe('BinaryTree', function() {
     it('should return proper object.', function() {
-        let binaryTree = new serializeDeserializeBinaryTree.BinaryTree();   
+        let binaryTree = new BinaryTree();   
         assert.equal(binaryTree instanceof Object, true)
     })
     it('should return null, since input string is empty.', function() {
-        let binaryTree = new serializeDeserializeBinaryTree.BinaryTree();
+        let binaryTree = new BinaryTree();
         assert.equal(binaryTree.deserialize(), null)
     })
-    it('should return Object of type Node, since input string has single element.', function() {
-        let binaryTree = new serializeDeserializeBinaryTree.BinaryTree();
-        assert.equal(binaryTree.deserialize(1) instanceof serializeDeserializeBinaryTree.Node, true)
+    it('should return null, since input is empty.', function() {
+        let binaryTree = new BinaryTree();
+        assert.equal(binaryTree.deserializeHelper(null), null)
     })
-    it(`should return Object of type Node with data property value 1
-        ,lNode property value null and rNode property value null.`, function() {
-        let binaryTree = new serializeDeserializeBinaryTree.BinaryTree();
-        let newNode = binaryTree.deserialize(1);
-        assert.equal(newNode instanceof serializeDeserializeBinaryTree.Node, true)
-        assert.equal(newNode.data, 1)
-        assert.equal(newNode.lNode, null)
-        assert.equal(newNode.rNode, null)
-        assert.equal(binaryTree.root instanceof serializeDeserializeBinaryTree.Node, true)
+    it('should return Node object, since input queue has single element. TestID:BinaryTree04 ', function() {
+        let binaryTree = new BinaryTree();
+        let queue = new Queue();
+        queue.add(10);
+        assert.equal(binaryTree.deserializeHelper(queue) instanceof Node, true)
+    })
+    it('should return Node object with data value 10, since input queue has single element 10.', function() {
+        let binaryTree = new BinaryTree();
+        let queue = new Queue();
+        queue.add(10);
+        let node = binaryTree.deserializeHelper(queue);
+        assert.equal(node.data, 10)
     })
 })
