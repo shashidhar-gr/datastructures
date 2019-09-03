@@ -22,10 +22,10 @@
     let highestList = [];
     let highest = 0, i = 0, n = a.length;
 
-    while(i < n) {
+    while(i <= (n-k)) {
         highest = a[i];
 
-        for(let j = i + 1; j < (((j + k)-1) && j < n); j++) {
+        for(let j = i + 1; j < ((j + k)-1) && (j < n); j++) {
             if(a[j] > highest) {
                 highest = a[j];
             }
@@ -37,5 +37,5 @@
 
     return highestList;
  }
-
+ 
  exports.findMax = findMax;
