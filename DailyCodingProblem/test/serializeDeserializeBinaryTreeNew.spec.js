@@ -1,5 +1,5 @@
-var BinaryTree = require('./serializeDeserializeBinaryTreeNew').BinaryTree;
-var Node = require('./serializeDeserializeBinaryTreeNew').Node;
+var BinaryTree = require('../serializeDeserializeBinaryTreeNew').BinaryTree;
+var Node = require('../serializeDeserializeBinaryTreeNew').Node;
 var assert = require('assert');
 
 describe('BinaryTree', function() {
@@ -24,12 +24,12 @@ describe('BinaryTree', function() {
         assert.equal(node.lNode, null);
         assert.equal(node.rNode, null);
     })
-    it('should return Node object with value 1, since input string is 1.', function() {
+    it('BinaryTree-TestID5. Should return Node object with value 1, since input string is 1.', function() {
         let binaryTree = new BinaryTree();
         let node = binaryTree.deserialize('4, 1');
         assert.equal(node.data, 4);
         let leftNode = node.lNode;
-        assert.equal(leftNode.data, 1);
+        assert.equal(leftNode, null);
         assert.equal(node.rNode, null);
     })
 })

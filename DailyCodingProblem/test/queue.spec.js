@@ -1,4 +1,4 @@
-var Queue = require('./queue').Queue;
+var Queue = require('../queue').Queue;
 var assert = require('assert');
 
 describe('Queue', function() {

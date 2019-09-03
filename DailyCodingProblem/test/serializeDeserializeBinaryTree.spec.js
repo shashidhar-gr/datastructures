@@ -1,6 +1,6 @@
-var BinaryTree = require('./serializeDeserializeBinaryTree').BinaryTree;
-var Node = require('./serializeDeserializeBinaryTree').Node;
-var Queue = require('./queue').Queue;
+var BinaryTree = require('../serializeDeserializeBinaryTree').BinaryTree;
+var Node = require('../serializeDeserializeBinaryTree').Node;
+var Queue = require('../queue').Queue;
 var assert = require('assert');
 
 describe('BinaryTree', function() {

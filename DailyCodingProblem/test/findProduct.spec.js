@@ -1,4 +1,4 @@
-var findProduct = require('./findProduct');
+var findProduct = require('../findProduct');
 var assert = require('assert');
 
 describe('findProduct', function() {

@@ -1,4 +1,4 @@
-var findPair = require('./findPair');
+var findPair = require('../findPair');
 var assert = require('assert');
 
 describe('findPairBruteForce', function() {
