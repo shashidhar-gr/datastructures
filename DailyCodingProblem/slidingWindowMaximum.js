@@ -12,9 +12,17 @@
     8 = max(2, 7, 8)
     8 = max(7, 8, 7)
     Do this in O(n) time and O(k) space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
- */
 
- function findMax(a = null, k = 0) {
+    LeetCode: https://leetcode.com/problems/sliding-window-maximum/
+    GeekForGeeks: https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
+
+
+ */
+ /** 
+  * Time complexity: O(N*K)
+  *     
+ */
+ function findMaxBruteForce(a = null, k = 0) {
     if(a === null || a.length === 0 || k === 0) {
         return [];
     }
@@ -22,19 +30,18 @@
     let highestList = [];
     let highest = 0, i = 0, n = a.length;
 
-    while(i < (n-k)) {
+    for(let i = 0; i <= n-k; i++) {
         highest = a[i];
 
-        for(let j = i + 1; j < ((j + k)-1) && (j < n); j++) {
-            if(a[j] > highest) {
-                highest = a[j];
+        for(let j = 1; j < k; j++) {
+            if(a[i+j] > highest) {
+                highest = a[i+j];
             }
         }
 
         highestList.push(highest);
-        i++;
     }
     return highestList;
  }
- findMax([1, 2, 3], 2)
- exports.findMax = findMax;
+ 
+ exports.findMaxBruteForce = findMaxBruteForce;
