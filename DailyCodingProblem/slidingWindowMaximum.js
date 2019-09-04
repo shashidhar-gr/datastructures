@@ -15,12 +15,10 @@
 
     LeetCode: https://leetcode.com/problems/sliding-window-maximum/
     GeekForGeeks: https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
-
-
  */
+
  /** 
   * Time complexity: O(N*K)
-  *     
  */
  function findMaxBruteForce(a = null, k = 0) {
     if(a === null || a.length === 0 || k === 0) {
