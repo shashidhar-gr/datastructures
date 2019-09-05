@@ -65,4 +65,14 @@ describe('Deque', function() {
         assert.equal(deque.size(), 0)
         assert.equal(deque.isEmpty(), true)
     })
+    it('should return propoer rear and front item from deque.', function() {
+        let deque = new Deque();
+        deque.addFront(10)
+        deque.addFront(20)
+        deque.addFront(true)
+        assert.equal(deque.isEmpty(), false)   
+        assert.equal(deque.size(), 3)
+        assert.equal(deque.getFront(), true)
+        assert.equal(deque.getRear(), 10)
+    })
 })

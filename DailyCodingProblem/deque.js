@@ -30,6 +30,22 @@ class Deque {
         return this.data.shift()
     }
 
+    //Returns the front item from the deque.
+    getFront() {
+        if(this.data.length > 0)
+            return this.data[this.data.length - 1]
+        else
+            return undefined;  
+    }
+
+    //Returns the rear item from the deque.
+    getRear() {
+        if(this.data.length > 0)
+            return this.data[0]
+        else
+            return undefined; 
+    }
+
     //Tests to see whether the deque is empty. It needs no parameters and returns a boolean value.
     isEmpty() {
         if(this.data.length === 0)
