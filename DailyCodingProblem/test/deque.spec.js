@@ -67,6 +67,8 @@ describe('Deque', function() {
     })
     it('should return propoer rear and front item from deque.', function() {
         let deque = new Deque();
+        assert.equal(deque.getFront(), undefined)
+        assert.equal(deque.getRear(), undefined)
         deque.addFront(10)
         deque.addFront(20)
         deque.addFront(true)
