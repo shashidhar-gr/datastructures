@@ -1,7 +1,8 @@
 var findMaxBruteForce = require('../slidingWindowMaximum').findMaxBruteForce;
+var findMaxDeque = require('../slidingWindowMaximum').findMaxDeque;
 var assert = require('assert');
 
-describe('findMax', function() {
+describe('findMax - BruteForce', function() {
     it('should return empty array, since the input array is empty.', function() {
         assert.deepEqual(findMaxBruteForce(), [])
     })
@@ -25,5 +26,14 @@ describe('findMax', function() {
     })
     it('should return [3, 3, 5, 5, 6, 7], since the input array is [1, 3, -1, -3, 5, 3, 6 ,7] and k = 3.', function() {
         assert.deepEqual(findMaxBruteForce([1, 3, -1, -3, 5, 3, 6 ,7], 3), [3, 3, 5, 5, 6, 7])
+    })
+})
+
+describe('findMax - Deque', function() {
+    it('should return empty array, since the input array is empty.', function() {
+        assert.deepEqual(findMaxDeque(), [])
+    })
+    it('should return empty array, since k = 0.', function() {
+        assert.deepEqual(findMaxDeque([1], 0), [])
     })
 })

@@ -41,5 +41,15 @@
     }
     return highestList;
  }
+
+/** 
+  * Time complexity: 
+ */
+ function findMaxDeque(a = null, k = 0) {
+    if(a === null || a.length === 0 || k === 0) {
+        return [];
+    }
+ }
  
  exports.findMaxBruteForce = findMaxBruteForce;
+ exports.findMaxDeque = findMaxDeque;
