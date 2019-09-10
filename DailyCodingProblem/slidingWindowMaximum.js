@@ -20,6 +20,9 @@
  /** 
   * Time complexity: O(N*K)
  */
+
+ var Deque = require('./deque').Deque;
+
  function findMaxBruteForce(a = null, k = 0) {
     if(a === null || a.length === 0 || k === 0) {
         return [];
@@ -49,6 +52,28 @@
     if(a === null || a.length === 0 || k === 0) {
         return [];
     }
+
+    let deque = new Deque();
+    let output = [];
+    for(let i = 0; i <= a.length-k; i++) {
+        while( !deque.isEmpty() && deque.getRear() <= i ) {
+            deque.removeRear()
+        }
+
+        for(let j = deque.isEmpty() ? 0: deque.getFront(); j < i+k; j++) {
+            if(deque.isEmpty()) {
+                deque.addFront(a[j])
+            }
+            else {
+                while(a[j] > a[deque.getFront()] && !deque.isEmpty()) {
+                    deque.removeFront()
+                }
+            }
+            deque.addFront(a[j])    
+        }
+        output.push(deque.getRear())
+    }
+    return output;
  }
  
  exports.findMaxBruteForce = findMaxBruteForce;

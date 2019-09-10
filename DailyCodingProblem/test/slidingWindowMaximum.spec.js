@@ -36,4 +36,10 @@ describe('findMax - Deque', function() {
     it('should return empty array, since k = 0.', function() {
         assert.deepEqual(findMaxDeque([1], 0), [])
     })
+    it('should return [1], since a = [1], k = 1.', function() {
+        assert.deepEqual(findMaxDeque([1], 1), [1])
+    })
+    it('should return [1, 2], since the input array is [1, 2] and k = 1.', function() {
+        assert.deepEqual(findMaxDeque([1, 2], 1), [1, 2])
+    })
 })

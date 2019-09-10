@@ -2,6 +2,7 @@
  * The deque abstract data type is defined by the following structure and operations. 
  * A deque is structured, as described below, as an ordered collection of items where items are added and removed from either end, either front or rear
  * Reference: https://runestone.academy/runestone/books/published/pythonds/BasicDS/TheDequeAbstractDataType.html
+ *   *Rear -> Node -> Node -> Node -> *Front
  */
 
 class Deque {
