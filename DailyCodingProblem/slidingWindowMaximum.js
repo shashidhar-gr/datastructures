@@ -68,8 +68,8 @@
                 while(a[j] > a[deque.getFront()] && !deque.isEmpty()) {
                     deque.removeFront()
                 }
+                deque.addFront(a[j]) 
             }
-            deque.addFront(a[j])    
         }
         output.push(deque.getRear())
     }
