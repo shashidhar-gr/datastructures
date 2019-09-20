@@ -48,6 +48,7 @@
 /** 
   * Time complexity: 
  */
+ //findMaxDeque([1, 2], 1)
  function findMaxDeque(a = null, k = 0) {
     if(a === null || a.length === 0 || k === 0) {
         return [];
@@ -62,16 +63,16 @@
 
         for(let j = deque.isEmpty() ? 0: deque.getFront(); j < i+k; j++) {
             if(deque.isEmpty()) {
-                deque.addFront(a[j])
+                deque.addFront(j)
             }
             else {
                 while(a[j] > a[deque.getFront()] && !deque.isEmpty()) {
                     deque.removeFront()
                 }
-                deque.addFront(a[j]) 
+                deque.addFront(j)
             }
         }
-        output.push(deque.getRear())
+        output.push(a[deque.getRear()])
     }
     return output;
  }
