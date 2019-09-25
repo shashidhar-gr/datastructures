@@ -6,6 +6,7 @@
     For example, let n be 7 and array be {1, 2, 3, 1, 3, 6, 6}, the answer should be 1, 3 and 6.
 
     GeekForGeeks: https://www.geeksforgeeks.org/find-duplicates-in-on-time-and-constant-extra-space/
+    youtube: https://www.youtube.com/watch?v=GeHOlt_QYz8
 */
 
 /*
